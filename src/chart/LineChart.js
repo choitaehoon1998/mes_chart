@@ -15,6 +15,7 @@ const LineChartExample = () => {
   const [data, setData] = useState(chartData);
   return (
     <>
+      <h3>Line Chart</h3>
       <LineChart
         width={1000}
         height={600}
