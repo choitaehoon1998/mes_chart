@@ -38,11 +38,17 @@ const renderCustomizedLabel = ({
 export default function Piechart() {
     const [data, setData]=useState([
         { name: "그룹 A", value: 200 },
-      { name: "그룹 B", value: 500 },
-      { name: "그룹 C", value: 100 },
-      { name: "그룹 D", value: 400 },
-      { name: "그룹 E", value: 240 }
+        { name: "그룹 B", value: 500 },
+        { name: "그룹 C", value: 100 },
+        { name: "그룹 D", value: 400 },
+        { name: "그룹 E", value: 240 }
     ]);
+
+    const arr = data.sort(function(a,b){
+        return a.value - b.value;
+    });
+    
+    console.log(arr);
     
 
   return (
@@ -51,7 +57,7 @@ export default function Piechart() {
     <PieChart width={500} height={500}>
       <Pie
         dataKey="value"
-        data={data}
+        data={arr}
         cx={250}
         cy={250}
         labelLine={false}
