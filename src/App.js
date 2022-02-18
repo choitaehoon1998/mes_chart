@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import BarChartExample from "./chart/BarChart";
+import LineChartExample from "./chart/LineChart";
 
 function App() {
+  const [chart, setChart] = useState({
+    type: "bar",
+  });
+  const onChangeChart = (e) => {
+    setChart({ ...chart, type: e.target.name });
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button name="bar" onClick={onChangeChart}>
+        Bar Chart
+      </button>
+      <button name="line" onClick={onChangeChart}>
+        Line Chart
+      </button>
+      <button name="pie" onClick={onChangeChart}>
+        Pie Chart
+      </button>
+      {chart.type === "bar" && <BarChartExample />}
+      {chart.type === "line" && <LineChartExample />}
+      {chart.type === "pie" && "pie"}
     </div>
   );
 }
