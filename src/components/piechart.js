@@ -30,24 +30,23 @@ const renderCustomizedLabel = ({
       textAnchor={x > cx ? "start" : "end"}
       dominantBaseline="central"
     >
-    
-      {`${(percent * 100).toFixed(0)}%`}
+      { `${(percent * 100).toFixed(0)}%`}
     </text>
   );
 };
 export default function Piechart() {
     const [data, setData]=useState([
-        { name: "그룹 A", value: 200 },
+        { name: "그룹 A", value: 300 },
         { name: "그룹 B", value: 500 },
         { name: "그룹 C", value: 100 },
         { name: "그룹 D", value: 400 },
-        { name: "그룹 E", value: 240 }
+        { name: "그룹 E", value: 200 }
     ]);
 
     const arr = data.sort(function(a,b){
         return a.value - b.value;
     });
-    
+
     console.log(arr);
     
 
