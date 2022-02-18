@@ -3,15 +3,10 @@ import React, { useCallback, useState } from "react";
 import "./pie.css"
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
-const data = [
-  { name: "그룹 A", value: 600 },
-  { name: "그룹 B", value: 500 },
-  { name: "그룹 C", value: 400 },
-  { name: "그룹 D", value: 300 },
-  { name: "그룹 E", value: 240 }
-];
+
 
 const COLORS = ["rgb(8 81 156)", "rgb(64 121 178)", "rgb(33 113 181)", "rgb(107 174 214)", "rgb(158 202 225)"];
+
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({
@@ -41,6 +36,15 @@ const renderCustomizedLabel = ({
   );
 };
 export default function Piechart() {
+    const [data, setData]=useState([
+        { name: "그룹 A", value: 200 },
+      { name: "그룹 B", value: 500 },
+      { name: "그룹 C", value: 100 },
+      { name: "그룹 D", value: 400 },
+      { name: "그룹 E", value: 240 }
+    ]);
+    
+
   return (
     <div className="d">
         <label className="l">Pie Chart</label>
